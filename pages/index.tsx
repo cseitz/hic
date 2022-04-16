@@ -1,4 +1,4 @@
-import { Box } from '@mui/material'
+import { Box, Rating } from '@mui/material'
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
@@ -19,7 +19,7 @@ const Home: NextPage = () => {
                 </h1>
 
                 <Box>
-                    hi there
+                    poopy <Rating/>
                 </Box>
 
                 <p className={styles.description}>
