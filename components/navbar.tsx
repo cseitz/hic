@@ -19,7 +19,30 @@ const items: {
             url: "/",
             icon: <Home />
         },
+        {
+            name: 'Products',
+            url: '/products',
+            icon: <Home />
+        },
+        {
+            name: 'About',
+            url: '/about',
+            icon: <Home />
+        },
+        {
+            name: 'Support',
+            url: '/support',
+            icon: <Home />
+        },
+        {
+            name: 'Contact',
+            url: '/contact',
+            icon: <Home />,
+            visible: section => section == 'drawer',
+        }
     ];
+
+export const navigationLinks = items;
 
 export default function Navbar() {
     const [open, setOpen] = useState(false);
