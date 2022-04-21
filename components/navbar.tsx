@@ -1,8 +1,9 @@
-import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Slide, Toolbar, Typography, useMediaQuery, useScrollTrigger } from "@mui/material";
+import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Slide, TextField, Toolbar, Typography, useMediaQuery, useScrollTrigger } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { Home, Menu } from "@mui/icons-material";
+import { Home, Menu, Search, ShoppingBasket } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import styled from "@emotion/styled";
 
 
 export const title = 'Website';
@@ -44,6 +45,7 @@ const items: {
 
 export const navigationLinks = items;
 
+
 export default function Navbar() {
     const [open, setOpen] = useState(false);
     const [visible, setVisible] = useState(false);
@@ -67,7 +69,7 @@ export default function Navbar() {
 
     const styles = {
         button: {
-            px: 2,
+            px: 1,
             mx: 0.5
         },
         drawer: {
@@ -122,12 +124,35 @@ export default function Navbar() {
                         <Menu />
 
                     </IconButton>
-                    <Box style={{ flexGrow: 2 }}>
+                    <Box>
                         {title && <Typography variant="h6" component="span" sx={{ verticalAlign: 'middle', mr: 2 }}>{title}</Typography>}
                         {!isMobile && navbarLinksLeft}
                     </Box>
 
+                    <Box sx={{ flexGrow: 1 }}>
+                        <Box sx={{
+                            maxWidth: isMobile ? '90vw' : '600px', mx: isMobile ? 2 : 10,
+                            backgroundColor: 'rgba(255, 255, 255, 0.15)',
+                            py: 1, px: 2, borderRadius: 1.5,
+                            transition: 'background-color 0.1s',
+                            '&:hover': {
+                                backgroundColor: 'rgba(255, 255, 255, 0.25)',
+                            },
+                            cursor: 'text',
+                        }}>
+                            <Box sx={{ display: 'flex' }}>
+                                <Search />
+                                <Typography sx={{ ml: 1 }}>Search</Typography>
+                            </Box>
+
+                        </Box>
+                    </Box>
+
+
                     {navbarLinksRight}
+                    <Button startIcon={<ShoppingBasket />} color='inherit' variant="text" sx={{ ...styles.button, px: 3 }}>
+                        Cart
+                    </Button>
 
                 </Toolbar>
             </AppBar>
