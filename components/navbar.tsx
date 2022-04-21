@@ -1,6 +1,6 @@
 import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListItemIcon, ListItemText, Slide, TextField, Toolbar, Typography, useMediaQuery, useScrollTrigger } from "@mui/material";
 import { useEffect, useRef, useState } from "react";
-import { Home, Menu, Search, ShoppingBasket } from "@mui/icons-material";
+import { ContactSupport, HelpCenter, Home, Info, Menu, Search, ShoppingBasket, ShoppingCart } from "@mui/icons-material";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styled from "@emotion/styled";
@@ -23,22 +23,22 @@ const items: {
         {
             name: 'Products',
             url: '/products',
-            icon: <Home />
+            icon: <ShoppingCart />
         },
         {
             name: 'About',
             url: '/about',
-            icon: <Home />
+            icon: <Info />
         },
         {
             name: 'Support',
             url: '/support',
-            icon: <Home />
+            icon: <HelpCenter />
         },
         {
             name: 'Contact',
             url: '/contact',
-            icon: <Home />,
+            icon: <ContactSupport />,
             visible: section => section == 'drawer',
         }
     ];
