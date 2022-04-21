@@ -129,7 +129,7 @@ export default function Navbar() {
                         {!isMobile && navbarLinksLeft}
                     </Box>
 
-                    <Box sx={{ flexGrow: 1 }}>
+                    <Box sx={{ flexGrow: 1 }} onClick={() => router.push('/products/search')}>
                         <Box sx={{
                             maxWidth: isMobile ? '90vw' : '600px', mx: isMobile ? 2 : 10,
                             backgroundColor: 'rgba(255, 255, 255, 0.15)',
@@ -138,7 +138,7 @@ export default function Navbar() {
                             '&:hover': {
                                 backgroundColor: 'rgba(255, 255, 255, 0.25)',
                             },
-                            cursor: 'text',
+                            cursor: 'pointer',
                         }}>
                             <Box sx={{ display: 'flex' }}>
                                 <Search />
@@ -150,9 +150,12 @@ export default function Navbar() {
 
 
                     {navbarLinksRight}
-                    <Button startIcon={<ShoppingBasket />} color='inherit' variant="text" sx={{ ...styles.button, px: 3 }}>
-                        Cart
-                    </Button>
+                    <Link href="/checkout">
+                        <Button startIcon={<ShoppingBasket />} color='inherit' variant="text" sx={{ ...styles.button, px: 3 }}>
+                            Cart
+                        </Button>
+                    </Link>
+
 
                 </Toolbar>
             </AppBar>
