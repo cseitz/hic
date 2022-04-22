@@ -1,7 +1,8 @@
+import { Box } from "@mui/system";
 
 
 export default function checkout(){
-    return <>
-    
-    </>
+    return <Box>
+
+    </Box>
 }
