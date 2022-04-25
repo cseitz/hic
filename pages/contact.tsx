@@ -1,5 +1,6 @@
 import { TextFieldsOutlined } from "@mui/icons-material";
 import {
+  Button,
   Grid,
   InputLabel,
   OutlinedInput,
@@ -10,30 +11,20 @@ import { Box } from "@mui/system";
 
 export default function contact() {
   return (
-    <Box sx={{ textAlign: "center", margin: "auto", width: "vw" }}>
-      <Typography variant="h2">Contact Us</Typography>
-      <hr style={{width: "50%"}}/>
-      <Grid container spacing={2} columns={8} width="50%" margin="auto">
-        <Grid item xs={4}>
-          <OutlinedInput
-            id="component-outlined"
-            size="small"
-            placeholder="Your Name"
-            sx={{ pr: 5 }}
-          />
-        </Grid>
-        <Grid item xs={4}>
-          <OutlinedInput
-            id="component-outlined"
-            placeholder="Your Email Address"
-            size="small"
-            sx={{ pr: 5 }}
-          />
-        </Grid>
-      </Grid>
-      <TextField>
+    <Box sx={{mx: 'auto', width: 'min(500px, 90vw)', textAlign: 'center', mt: 10}}>
+            <Typography variant="h4" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: 25 }} >Contact Us</Typography>
+            <Typography style={{ textAlign: 'center', marginTop: 15, marginBottom: 25 }} >If you have any questions, concerns please do not hesitate to contact us.</Typography>
 
-      </TextField>
-    </Box>
-  );
+            <TextField fullWidth label="Name" type="text" name="name" placeholder="Name" />
+            <TextField fullWidth label="Email" type="text" name="email" placeholder="Email" />
+
+            <br /><br />
+
+            <TextField fullWidth multiline minRows={2} label="Write your message here." type="text" name="message" placeholder="Write your message here." />
+
+            <br /><br />
+
+            <Button variant="contained" type="submit" fullWidth >Send</Button>
+        </Box>
+  )
 }
