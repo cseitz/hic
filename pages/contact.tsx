@@ -1,5 +1,6 @@
 import { TextFieldsOutlined } from "@mui/icons-material";
 import {
+  Box,
   Button,
   Grid,
   InputLabel,
@@ -7,7 +8,6 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Box } from "@mui/system";
 
 export default function contact() {
   return (
@@ -28,3 +28,4 @@ export default function contact() {
         </Box>
   )
 }
+
