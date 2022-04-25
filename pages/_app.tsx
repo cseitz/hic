@@ -4,6 +4,7 @@ import Navbar from 'components/navbar'
 import { Box } from '@mui/material'
 import Footer from 'components/footer'
 
+export const MaxWidth = { maxWidth: 1400, mx: 'auto' };
 function MyApp({ Component, pageProps }: AppProps) {
     return <Box>
         <Navbar />
