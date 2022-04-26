@@ -12,15 +12,15 @@ export default function About() {
         <br/>
         <Box sx={{ p: 2, textAlign: "center"}}><Typography variant="h5" >Our Team</Typography></Box>
         <Box sx={{ width: "50vw", margin: 'auto', justifyContent: 'center' }}>
-            <Grid container spacing={1} sx= {{margin: "auto"}}>
-                <Grid item xs={6} sm={4}>
-                    <Skeleton variant="rectangular" width={151} height={140} />
+            <Grid container>
+                <Grid item xs={6} sm={4} sx={{ textAlign: 'center' }}>
+                    <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block'}} />
                 </Grid>
                 <Grid item xs={6} sm={4}>
-                    <Skeleton variant="rectangular" width={151} height={140} />
+                    <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block'}} />
                 </Grid>
                 <Grid item xs={6} sm={4}>
-                    <Skeleton variant="rectangular" width={151} height={140} />
+                    <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block'}} />
                 </Grid>
             </Grid>
         </Box>
