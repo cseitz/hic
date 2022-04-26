@@ -1,4 +1,4 @@
-import { Badge, Box, Button, ButtonGroup, Card, CardContent, CardMedia, Grid, IconButton, Skeleton, Typography } from "@mui/material";
+import { Badge, Box, Button, ButtonGroup, Card, CardContent, CardMedia, Grid, IconButton, Paper, Skeleton, Typography } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -8,95 +8,14 @@ export default function Checkout() {
     const [count, setCount] = React.useState(1);
     return <Box sx={{ mx: 'auto', width: 'min(90vw)', textAlign: 'center', p: 2 }}>
         <Typography variant="h2" style={{ textAlign: 'center', fontWeight: 'bold', marginTop: 2 }}>Checkout</Typography>
-        <hr/>
+        <hr />
         <Grid container spacing={2} sx={{ margin: 'auto', justifyContent: 'center' }}>
             {/* Order Items */}
             <Grid item xs={12} sm={6}>
                 <Box sx={{ border: 2, borderRadius: 2, height: '80vh', p: 1 }}>
                     {/* A PRODUCT IN THE CART */}
-                    <Box sx={{ border: 2, borderRadius: 2 }}>
-                        <Card sx={{ display: 'flex' }}>
-                            <Skeleton variant="rectangular" width={151} height={140} />
-                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                                <CardContent sx={{ flex: 'auto' }}>
-                                    <Typography component="div" variant="h5">
-                                        PRODUCT NAME
-                                    </Typography>
-                                    <Typography sx={{ alignText: 'left' }}>PRODUCT DESCRIPTION</Typography>
-                                    <Box sx={{ textAlign: 'left', mt: 1.5}}>
-                                        <ButtonGroup size="small" sx={{ textAlign: 'left'}}>
-                                        <Button
-                                                size="small"
-                                                aria-label="reduce"
-                                                onClick={() => {
-                                                    setCount(Math.max(count - 1, 0));
-                                                }}
-                                            >
-                                                <RemoveIcon fontSize="small" />
-                                            </Button>
-                                            <Button size="small" disableTouchRipple disableElevation>{count}</Button>
-                                            <Button
-                                                aria-label="increase"
-                                                onClick={() => {
-                                                    setCount(count + 1);
-                                                }}
-                                            >
-                                                <AddIcon fontSize="small" />
-                                            </Button>
-                                        </ButtonGroup>
-                                    </Box>
-                                </CardContent>
-                            </Box>
-                            <Box sx={{ display: 'flex', pl: 50, pb: 1, pt:1 }}>
-                                <DeleteIcon sx={{alignItems: 'right'}}/>
-                            </Box>
-                        </Card>
-                    </Box>
-                    <br />
-                    {/* PRODUCT PRODUCT PRODUCT */}
-                    {/* PRODUCT */}
-                    {/* PRODUCT PRODUCT PRODUCT */}
-                    {/* PRODUCT */}
-                    <Box sx={{ border: 2, borderRadius: 2 }}>
-                        <Card sx={{ display: 'flex' }}>
-                            <Skeleton variant="rectangular" width={151} height={140} />
-                            <Box sx={{ display: 'flex', flexDirection: 'column' }}>
-                                <CardContent sx={{ flex: 'auto' }}>
-                                    <Typography component="div" variant="h5">
-                                        PRODUCT NAME
-                                    </Typography>
-                                    <Typography sx={{ alignText: 'left' }}>PRODUCT DESCRIPTION</Typography>
-                                    <Box sx={{ textAlign: 'left', mt: 1.5}}>
-                                        <ButtonGroup size="small" sx={{ textAlign: 'left'}}>
-                                        <Button
-                                                size="small"
-                                                aria-label="reduce"
-                                                onClick={() => {
-                                                    setCount(Math.max(count - 1, 0));
-                                                }}
-                                            >
-                                                <RemoveIcon fontSize="small" />
-                                            </Button>
-                                            <Button size="small" disableTouchRipple disableElevation>{count}</Button>
-                                            <Button
-                                                aria-label="increase"
-                                                onClick={() => {
-                                                    setCount(count + 1);
-                                                }}
-                                            >
-                                                <AddIcon fontSize="small" />
-                                            </Button>
-                                        </ButtonGroup>
-                                    </Box>
-                                </CardContent>
-                            </Box>
-                            <Box sx={{ display: 'flex', pl: 50, pb: 1, pt:1 }}>
-                                <DeleteIcon sx={{alignItems: 'right'}}/>
-                                <Typography variant="body1">PRICE:</Typography>
-                            </Box>
-                        </Card>
-                    </Box>
-                    {/* PRODUCT */}
+                    <ProductEntry />
+                    <ProductEntry />
                 </Box>
             </Grid>
             {/* Order Summary BOX */}
@@ -162,4 +81,39 @@ export default function Checkout() {
             </Grid>
         </Grid>
     </Box>
+}
+
+
+function ProductEntry() {
+    return <Paper sx={{ borderRadius: 2, m: 2 }}>
+        <Grid container>
+            <Grid item xs={4} xl={3}>
+                <Skeleton variant="rectangular" width={151} height={140} />
+            </Grid>
+            <Grid item xs={8} xl={9} sx={{ textAlign: 'left', p: 2 }}>
+                <Typography component="div" variant="h5">
+                    PRODUCT NAME
+                </Typography>
+                <Typography sx={{ alignText: 'left' }}>PRODUCT DESCRIPTION</Typography>
+                <Box sx={{ textAlign: 'left', mt: 1.5 }}>
+                    <ButtonGroup size="small" sx={{ textAlign: 'left' }}>
+                        <Button
+                            size="small"
+                            aria-label="reduce"
+
+                        >
+                            <RemoveIcon fontSize="small" />
+                        </Button>
+                        <Button size="small" disableTouchRipple disableElevation>1</Button>
+                        <Button
+                            aria-label="increase"
+
+                        >
+                            <AddIcon fontSize="small" />
+                        </Button>
+                    </ButtonGroup>
+                </Box>
+            </Grid>
+        </Grid>
+    </Paper>;
 }
