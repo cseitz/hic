@@ -1,9 +1,10 @@
 import { Box, Divider, Grid, Skeleton, Typography } from "@mui/material";
+import { MaxWidth } from "./_app";
 
 export default function About() {
-    return <Box sx={{ p: 2, textAlign: "center", margin: "auto", mt: 5 }}>
+    return <Box sx={{ p: 2, textAlign: "center", mt: 5 }}>
         <Typography variant="h4" sx={{ mb: 2 }}>About</Typography>
-        <Box sx={{ p: 1, textAlign: "center", width: 650, margin: "auto", mb: 5 }}>
+        <Box sx={{ p: 1, textAlign: "center", width: 650, margin: "auto", mb: 5, ...MaxWidth }}>
             <Typography variant="body1">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 Convallis a cras semper auctor neque vitae tempus.
@@ -37,22 +38,23 @@ export default function About() {
             </Typography>
         </Box>
         <Divider orientation="horizontal" />
-        <br />
-        <Box sx={{ p: 2, textAlign: "center" }}>
-            <Typography variant="h5" >Our Team</Typography>
-        </Box>
-        <Box sx={{ width: "50vw", mx: 'auto', justifyContent: 'center', mb: 10 }}>
-            <Grid container>
-                <Grid item xs={6} sm={4} sx={{ textAlign: 'center' }}>
-                    <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block' }} />
+        <Box sx={{ ...MaxWidth }}>
+            <Box sx={{ p: 2, textAlign: "center", }}>
+                <Typography variant="h5" >Our Team</Typography>
+            </Box>
+            <Box sx={{ width: "50vw", mx: 'auto', justifyContent: 'center', mb: 10 }}>
+                <Grid container>
+                    <Grid item xs={6} sm={4} sx={{ textAlign: 'center' }}>
+                        <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block' }} />
+                    </Grid>
+                    <Grid item xs={6} sm={4}>
+                        <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block' }} />
+                    </Grid>
+                    <Grid item xs={6} sm={4}>
+                        <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block' }} />
+                    </Grid>
                 </Grid>
-                <Grid item xs={6} sm={4}>
-                    <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block' }} />
-                </Grid>
-                <Grid item xs={6} sm={4}>
-                    <Skeleton variant="rectangular" width={151} height={140} sx={{ display: 'inline-block' }} />
-                </Grid>
-            </Grid>
+            </Box>
         </Box>
     </Box>
 }
