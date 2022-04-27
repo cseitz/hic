@@ -12,8 +12,9 @@
 /.next/
 /out/
 
-# production
-/build
+/build/files
+/build/node_modules
+/build/package-lock.json
 
 # misc
 .DS_Store
