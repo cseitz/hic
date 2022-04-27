@@ -1,5 +1,6 @@
 import { Box, Button, Divider, Grid, Rating, Typography, useMediaQuery } from "@mui/material";
 import { useRouter } from "next/router";
+import { Product } from "pages/products/[category]";
 import { MaxWidth } from "pages/_app";
 
 export default function ProductView() {
@@ -128,8 +129,18 @@ function Specifications() {
 
 function Recommendations() {
     const isMobile = useMediaQuery('(max-width:600px)');
+    const ProductEntry = (props: Parameters<typeof Product>[0]) => (
+        <Grid item xs={5.8} sx={{ pb: 2 }}>
+            <Product {...props} />
+        </Grid>
+    )
     return <Box sx={{ ...MaxWidth, pl: isMobile ? 1 : 15, pr: isMobile ? 1 : 5, my: 3 }}>
         <Typography variant="h5">You might also be interested in...</Typography>
-
+        <Grid container sx={{ justifyContent: 'space-between', mt: 2 }}>
+            <ProductEntry id={'0'} />
+            <ProductEntry id={'1'} />
+            <ProductEntry id={'2'} />
+            <ProductEntry id={'3'} />
+        </Grid>
     </Box>
 }

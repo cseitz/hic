@@ -1,4 +1,4 @@
-import { Badge, Box, Button, ButtonGroup, Card, CardContent, CardMedia, Divider, Grid, IconButton, Paper, Skeleton, Typography } from "@mui/material";
+import { Badge, Box, Button, ButtonGroup, Card, CardContent, CardMedia, Divider, Grid, IconButton, Paper, Skeleton, Tooltip, Typography } from "@mui/material";
 import AddIcon from '@mui/icons-material/Add';
 import RemoveIcon from '@mui/icons-material/Remove';
 import DeleteIcon from '@mui/icons-material/Delete';
@@ -102,7 +102,9 @@ function ProductEntry() {
 
                     </Grid>
                     <Grid item xs={1}>
-                        <DeleteIcon sx={{ float: 'right', cursor: 'pointer' }} />
+                        <Tooltip title="Remove from Cart" disableInteractive>
+                            <DeleteIcon sx={{ float: 'right', cursor: 'pointer' }} />
+                        </Tooltip>
                     </Grid>
                     <Grid item xs={6}>
                         <ButtonGroup size="small" sx={{ textAlign: 'left' }}>

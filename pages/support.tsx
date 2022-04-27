@@ -42,9 +42,14 @@ export default function Support() {
 
         <br />
 
-        <Box sx={{ textAlign: "center" }}>
+        <Divider orientation="horizontal" />
+
+        <Box sx={{ textAlign: "center", mt: 8 }}>
+            <Typography variant="h5" sx={{ mb: 1 }}>Still have questions?</Typography>
             <Link href="/contact">
-                <Button variant="contained" href="/contact">Contact Us</Button>
+                <Button variant="contained" href="/contact" sx={{ px: 4, py: 1 }}>
+                    <Typography variant="h6">Contact Us</Typography>
+                </Button>
             </Link>
         </Box>
     </Box>

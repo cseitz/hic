@@ -33,7 +33,8 @@ export default function ProductCategory() {
         </Box>
     );
 }
-function Product(props: { id: string }) {
+
+export function Product(props: { id: string }) {
     return <Link href={'/product/' + props.id}>
         <Paper sx={{ borderRadius: 2, mb: 2, textDecoration: 'none', cursor: 'pointer' }}>
             <Grid container>
