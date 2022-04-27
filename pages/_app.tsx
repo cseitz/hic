@@ -17,3 +17,13 @@ function MyApp({ Component, pageProps }: AppProps) {
 }
 
 export default MyApp
+
+import NextLink from 'next/link';
+export function Link(props: Parameters<typeof NextLink>[0]) {
+    const { children, ...rest } = props;
+    return <NextLink {...rest}>
+        <a style={{ textDecoration: 'none' }}>
+            {children}
+        </a>
+    </NextLink>
+}

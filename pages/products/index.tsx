@@ -1,8 +1,7 @@
 import { Box, Grid, Paper, Rating, Skeleton, Typography, Pagination } from "@mui/material";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useRouter } from "next/router";
-import { MaxWidth } from "pages/_app";
-import Link from "next/link";
+import { MaxWidth, Link } from "pages/_app";
 
 export default function ProductCategory() {
     const router = useRouter();

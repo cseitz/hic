@@ -1,6 +1,5 @@
 import { Box, Button, Divider, Grid, Typography, useMediaQuery } from "@mui/material";
-import Link from "next/link";
-import { MaxWidth } from "./_app";
+import { MaxWidth, Link } from "./_app";
 
 
 export default function Homepage() {

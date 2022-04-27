@@ -1,7 +1,6 @@
 import { AddAlert, Facebook, Google, Notifications, Twitter, YouTube } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, Divider, Grid, IconButton, Tooltip, Typography, useMediaQuery } from "@mui/material";
-import Link from "next/link";
-import { MaxWidth } from "pages/_app";
+import { MaxWidth, Link } from "pages/_app";
 import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { navigationLinks } from "./navbar";
 

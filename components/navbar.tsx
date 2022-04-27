@@ -2,7 +2,7 @@ import { AppBar, Box, Button, Divider, Drawer, IconButton, List, ListItem, ListI
 import { useEffect, useRef, useState } from "react";
 import { ContactSupport, HelpCenter, Home, Info, Menu, Search, ShoppingBasket, ShoppingCart } from "@mui/icons-material";
 import { useRouter } from "next/router";
-import Link from "next/link";
+import { Link } from "pages/_app";
 import styled from "@emotion/styled";
 
 

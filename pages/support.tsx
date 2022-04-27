@@ -1,6 +1,5 @@
 import { Box, Button, Divider, Typography } from "@mui/material";
-import Link from "next/link";
-import { MaxWidth } from "./_app";
+import { MaxWidth, Link } from "./_app";
 
 export default function Support() {
     return <Box sx={{ p: 2, mb: 10 }}>
