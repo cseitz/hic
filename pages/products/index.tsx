@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Rating, Skeleton, Typography, Pagination } from "@mui/material";
+import { Box, Grid, Paper, Rating, Skeleton, Typography, Pagination, Link } from "@mui/material";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useRouter } from "next/router";
 
@@ -9,17 +9,27 @@ export default function ProductCategory() {
     <Box sx={{mx: 'auto', width: 'min(90vw)', textAlign: 'center', p: 2, mb: 10  }}>
       <Typography variant="h4">Product Categories: {category}</Typography>
       <Grid container sx={{margin: 'auto', justifyContent: 'center'}} rowSpacing={6} columnSpacing={2}>
+        
         <Grid item xs={6}>
+             <Link href="/products/category">
              <Category/>
+             </Link>
         </Grid>
+
         <Grid item xs={6}>
+        <Link href="/products/category">
              <Category/>
+             </Link>
         </Grid>
         <Grid item xs={6}>
-            <Category/>
+        <Link href="/products/category">
+             <Category/>
+             </Link>
         </Grid>
         <Grid item xs={6}>
-            <Category/>
+        <Link href="/products/category">
+             <Category/>
+             </Link>
         </Grid>
       </Grid>
       <Box justifyContent="center" display="flex">
