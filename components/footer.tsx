@@ -1,6 +1,7 @@
 import { AddAlert, Facebook, Google, Notifications, Twitter, YouTube } from "@mui/icons-material";
 import { Box, Button, ButtonGroup, Divider, Grid, IconButton, Tooltip, Typography, useMediaQuery } from "@mui/material";
 import Link from "next/link";
+import { MaxWidth } from "pages/_app";
 import { Fragment, useEffect, useLayoutEffect, useRef, useState } from "react";
 import { navigationLinks } from "./navbar";
 
@@ -8,8 +9,9 @@ import { navigationLinks } from "./navbar";
 export default function Footer() {
     const isMobile = useMediaQuery('(max-width:600px)');
     const details = useRef<any>(null);
-    return <Box sx={{ minHeight: 100, borderTop: '1px solid black', mb: isMobile ? 35 : 0 }}>
-        <Grid container columns={isMobile ? 6 : 12} spacing={0} sx={{ my: 3, height: isMobile ? 180 : 100 }}>
+    return <Box sx={{ minHeight: 100, mb: isMobile ? 35 : 0, p: 2 }}>
+        <Divider orientation="horizontal" />
+        <Grid container columns={isMobile ? 6 : 12} spacing={0} sx={{ my: 3, height: isMobile ? 180 : 100, ...MaxWidth }}>
             <Logo {...{ details }} />
             <Details {...{ details }} />
             {!isMobile && <Grid item xs={1} />}
