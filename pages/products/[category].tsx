@@ -1,4 +1,4 @@
-import { Box, Grid, Paper, Rating, Skeleton, Typography } from "@mui/material";
+import { Box, Grid, Paper, Rating, Skeleton, Typography, Pagination } from "@mui/material";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useRouter } from "next/router";
 
@@ -8,6 +8,7 @@ export default function ProductCategory() {
   return (
     <Box sx={{mx: 'auto', width: 'min(90vw)', textAlign: 'center', p: 2, mb: 10  }}>
       <Typography variant="h4">Products: {category}</Typography>
+      <Typography variant="h6">'8' search results for {category}</Typography>
       <Grid container sx={{margin: 'auto', justifyContent: 'center'}} rowSpacing={6} columnSpacing={2}>
         <Grid item xs={6}>
             <Product/>
@@ -22,6 +23,7 @@ export default function ProductCategory() {
             <Product/>
         </Grid>
       </Grid>
+      <Pagination count={2} color="primary"/>
     </Box>
   );
 }
