@@ -1,6 +1,8 @@
-import { Box, Grid, Paper, Rating, Skeleton, Typography, Pagination, Link } from "@mui/material";
+import { Box, Grid, Paper, Rating, Skeleton, Typography, Pagination } from "@mui/material";
 import AddBoxIcon from '@mui/icons-material/AddBox';
 import { useRouter } from "next/router";
+import { MaxWidth } from "pages/_app";
+import Link from "next/link";
 
 export default function ProductCategory() {
     const router = useRouter();
@@ -11,7 +13,7 @@ export default function ProductCategory() {
         </Grid>
     )
     return (
-        <Box sx={{ textAlign: 'center', p: 2, mb: 10 }}>
+        <Box sx={{ textAlign: 'center', p: 2, mb: 10, ...MaxWidth }}>
             <Typography variant="h4" sx={{ mt: 5 }}>What are you looking for?</Typography>
             <Grid container sx={{ margin: 'auto', justifyContent: 'center', gap: 5, my: 10 }}>
                 <CategoryEntry name="Category" />
@@ -27,8 +29,8 @@ export default function ProductCategory() {
 }
 
 function Category(props: { name: string }) {
-    return <Link href={'/products/' + props.name.toLowerCase().split(' ').join('-')} sx={{ textDecoration: 'none' }}>
-        <Paper sx={{ borderRadius: 2, mb: 2 }}>
+    return <Link href={'/products/' + props.name.toLowerCase().split(' ').join('-')}>
+        <Paper sx={{ borderRadius: 2, mb: 2, textDecoration: 'none', cursor: 'pointer' }}>
             <Grid container sx={{ textAlign: "center" }}>
                 <Grid item xs={4} xl={3}>
                     <Skeleton variant="rectangular" width={160} height={160} />
@@ -42,9 +44,6 @@ function Category(props: { name: string }) {
                                 </Typography>
                             </Box>
 
-                        </Grid>
-                        <Grid item xs={1}>
-                            <AddBoxIcon sx={{ float: 'right', cursor: 'pointer', fontSize: 'large' }} />
                         </Grid>
                     </Grid>
                 </Grid>
